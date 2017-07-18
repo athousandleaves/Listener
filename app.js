@@ -52,4 +52,11 @@ function displayContent(songs) {
 			    html +=    '</div>';
                 html +=  '</div>';
                 youTube(search);    
-			});
+            });
+             html +=   '</div>';
+			 html += '</div>';
+
+    songList.innerHTML = html;
+    extra = document.querySelectorAll('.extra');
+	
+}
