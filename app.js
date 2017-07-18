@@ -50,4 +50,6 @@ function displayContent(songs) {
                 html +=      '<div class="extra">';
 				html +=      '</div>';
 			    html +=    '</div>';
-			    html +=  '</div>';
+                html +=  '</div>';
+                youTube(search);    
+			});
