@@ -34,3 +34,6 @@ searchIcon.addEventListener('click', APIcaller);
 //prints songs to the html
 function displayContent(songs) {
   songList.setAttribute("class", "ui raised container segment");
+
+  var html = '<div class="ui items center aligned divided vertical segment">';
+      html +=   '<div class="ui items center aligned divided vertical segment">';
