@@ -37,3 +37,8 @@ function displayContent(songs) {
 
   var html = '<div class="ui items center aligned divided vertical segment">';
       html +=   '<div class="ui items center aligned divided vertical segment">';
+
+      songs.toptracks.track.forEach(function(i) {
+             var songName = i.name;
+             var artist = input.value;
+             var search = artist + ' ' + songName;
