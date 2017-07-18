@@ -24,3 +24,6 @@ function APIcaller(event) {
 	}
  } 
 }
+
+//keypress listener that calls the API and sends the parsed data to the displayContent function
+input.addEventListener('keypress', APIcaller);
