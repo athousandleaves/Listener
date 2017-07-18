@@ -46,4 +46,8 @@ function displayContent(songs) {
 			    html +=    '<div class="content">';
 			    html +=      '<h1 class="header">';
 			    html +=       songName;
-			    html +=      '</h1>';
+                html +=      '</h1>';
+                html +=      '<div class="extra">';
+				html +=      '</div>';
+			    html +=    '</div>';
+			    html +=  '</div>';
