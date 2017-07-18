@@ -42,3 +42,8 @@ function displayContent(songs) {
              var songName = i.name;
              var artist = input.value;
              var search = artist + ' ' + songName;
+                html +=  '<div class="item">';
+			    html +=    '<div class="content">';
+			    html +=      '<h1 class="header">';
+			    html +=       songName;
+			    html +=      '</h1>';
