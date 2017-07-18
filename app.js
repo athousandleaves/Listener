@@ -30,3 +30,7 @@ input.addEventListener('keypress', APIcaller);
 
 //click listener that calls API
 searchIcon.addEventListener('click', APIcaller);
+
+//prints songs to the html
+function displayContent(songs) {
+  songList.setAttribute("class", "ui raised container segment");
