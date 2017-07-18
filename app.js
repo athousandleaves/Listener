@@ -13,3 +13,14 @@ function APIcaller(event) {
       xhr.onerror = error;
       xhr.open('get', `https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=${encodeURIComponent(artist)}&limit=10&api_key=${YOUR-API-KEY}&format=json`);
       xhr.send();
+
+    function pull () {
+      var parsed = JSON.parse(this.responseText);
+      displayContent(parsed);
+    }
+
+    function error (err) {  
+      console.log('Error: ', err);  
+	}
+ } 
+}
