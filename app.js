@@ -60,3 +60,10 @@ function displayContent(songs) {
     extra = document.querySelectorAll('.extra');
 	
 }
+
+function youTube(search) {
+  var xhr = new XMLHttpRequest();
+  xhr.onload = ytListener;
+  xhr.onerror = ytError;
+  xhr.open('get', `https://www.googleapis.com/youtube/v3/search?q=${search}&maxResults=1&part=snippet&key=AIzaSyCadYW5zxzF9gmZPy3zhw4leyPMkuh1rGQ`);
+  xhr.send();
