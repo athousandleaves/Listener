@@ -67,3 +67,13 @@ function youTube(search) {
   xhr.onerror = ytError;
   xhr.open('get', `https://www.googleapis.com/youtube/v3/search?q=${search}&maxResults=1&part=snippet&key=AIzaSyCadYW5zxzF9gmZPy3zhw4leyPMkuh1rGQ`);
   xhr.send();
+
+  function ytListener() {
+    var parse = JSON.parse(this.responseText);
+    links.push(parse.items[0].id.videoId); 
+    generateLinks(links.length);
+  }
+
+  function ytError(err) {  
+    console.log('Error: ', err);  
+  }
