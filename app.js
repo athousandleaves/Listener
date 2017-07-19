@@ -77,3 +77,9 @@ function youTube(search) {
   function ytError(err) {  
     console.log('Error: ', err);  
   }
+
+  function generateLinks(i){
+  id = links[i-1];
+  extra.item(i-1).innerHTML += '<a class="ui mini basic green button" id="songlink" href="https://www.youtube.com/watch?v=' + id + '">Listen</a>';
+}
+}
