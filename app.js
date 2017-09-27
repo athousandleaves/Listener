@@ -77,7 +77,7 @@ function youTube(search) {
   xhr.onerror = ytError;
   xhr.open(
     "get",
-    `https://www.googleapis.com/youtube/v3/search?q=${search}&maxResults=1&part=snippet&key=${youtubeKey}`
+    `https://www.googleapis.com/youtube/v3/search?q=${encodeURIComponent(search)}&maxResults=1&part=snippet&key=${youtubeKey}`
   );
   xhr.send();
 
