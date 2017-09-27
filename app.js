@@ -49,7 +49,7 @@ function displayContent(songs) {
   var html = '<div class="ui items center aligned divided vertical segment">';
   html += '<div class="ui items center aligned divided vertical segment">';
 
-  songs.toptracks.track.forEach(function(i) {
+  songs.toptracks.track.forEach(function(i, index) {
     var songName = i.name;
     var artist = input.value;
     var search = artist + " " + songName;
@@ -62,7 +62,7 @@ function displayContent(songs) {
     html += "</div>";
     html += "</div>";
     html += "</div>";
-    youTube(search);
+    youTube(search, index);
   });
   html += "</div>";
   html += "</div>";
@@ -83,19 +83,11 @@ function youTube(search) {
 
   function ytListener() {
     var parse = JSON.parse(this.responseText);
-    links.push(parse.items[0].id.videoId);
-    generateLinks(links.length);
+    var id = parse.items[0].id.videoId;
+    extra.item(index).innerHTML += '<a class="ui mini basic green button" id="songlink" href="https://www.youtube.com/watch?v=' + id + '">Listen</a>';
   }
 
   function ytError(err) {
     console.log("Error: ", err);
-  }
-
-  function generateLinks(i) {
-    id = links[i - 1];
-    extra.item(i - 1).innerHTML +=
-      '<a class="ui mini basic green button" id="songlink" href="https://www.youtube.com/watch?v=' +
-      id +
-      '">Listen</a>';
   }
 }
