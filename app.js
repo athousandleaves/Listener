@@ -1,7 +1,7 @@
 var input = document.getElementById("input");
 var songList = document.getElementById("songlist");
 var extra = "";
-var links = [];
+var links;
 var searchIcon = document.getElementById("search");
 var lastfmKey = process.env.lastfmKey;
 var youtubeKey = process.env.youtubeKey;
@@ -12,6 +12,7 @@ function APIcaller(event) {
     event.type === "click" ||
     (event.type === "keypress" && event.which === 13)
   ) {
+    links = [];
     var artist = input.value;
     var xhr = new XMLHttpRequest();
     xhr.onload = pull;
