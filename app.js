@@ -1,12 +1,12 @@
-var input = document.getElementById("input");
-var songList = document.getElementById("songlist");
-var searchIcon = document.getElementById("search");
-var extra;
-var links;
-var id;
-var ytLinks;
-var lastfmKey = process.env.lastfmKey;
-var youtubeKey = process.env.youtubeKey;
+var input      = document.getElementById("input"),
+    songList   = document.getElementById("songlist"),
+    searchIcon = document.getElementById("search"),
+    extra,
+    links,
+    id,
+    ytLinks,
+    lastfmKey  = process.env.lastfmKey,
+    youtubeKey = process.env.youtubeKey;
 
 // API call function
 function APIcaller(event) {
