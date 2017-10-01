@@ -1,8 +1,10 @@
 var input = document.getElementById("input");
 var songList = document.getElementById("songlist");
-var extra = "";
-var links;
 var searchIcon = document.getElementById("search");
+var extra;
+var links;
+var id;
+var ytLinks;
 var lastfmKey = process.env.lastfmKey;
 var youtubeKey = process.env.youtubeKey;
 
@@ -45,9 +47,17 @@ searchIcon.addEventListener("click", APIcaller);
 //prints songs to the html
 function displayContent(songs) {
   songList.setAttribute("class", "ui raised container segment");
-
+  ytLinks = [];
   var html = '<div class="ui items center aligned divided vertical segment">';
-  html += '<div class="ui items center aligned divided vertical segment">';
+      html += '<div class="ui items center aligned divided vertical segment">';
+  
+  // print playlist
+  html +=  '<div class="item">';
+  html +=    '<div class="content">';
+  html +=      '<h1 class="header" id="playlist">';
+  html +=      '</h1>';
+  html +=    '</div>';
+  html +=  '</div>';
 
   songs.toptracks.track.forEach(function(i, index) {
     var songName = i.name;
