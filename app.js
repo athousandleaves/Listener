@@ -5,8 +5,8 @@ var input      = document.getElementById("input"),
     links,
     id,
     ytLinks,
-    lastfmKey  = process.env.lastfmKey,
-    youtubeKey = process.env.youtubeKey;
+    lastfmKey  = '1fb695951989e7318d3bf9e1d40641de',
+    youtubeKey = 'AIzaSyD8C4oGBF7GwWTEn-fNMRSMsUlxv9uDIX4';
 
 // API call function
 function APIcaller(event) {
@@ -100,6 +100,9 @@ function youTube(search, index) {
     // when all api requests have finished, print the playlist
     if (ytLinks.length === 10) {
       var trax = ytLinks.join(',');
+      playlist.innerHTML += `<div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/${ytLinks[0]}"></iframe>
+  </div>`
       playlist.innerHTML += "<a class='ui basic large button' id='playall' href='https://www.youtube.com/watch_videos?video_ids=" + trax + "'><i id='vplay' class='video play icon'></i> <strong>Play All</strong></a>";
     }  
   }
